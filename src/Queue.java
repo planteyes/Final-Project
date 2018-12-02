@@ -9,14 +9,14 @@ class Queue {
 	int id;
 	double price;
 	String[] array;
-	int []counter;
+
 
 	public Queue(int capacity) {
 		this.capacity = capacity;
 		front = this.size = 0;
 		back = capacity - 1;
 		array = new String[this.capacity];
-		counter = new int[this.capacity];
+
 	}
 
 	boolean isFull(Queue queue) {
@@ -33,7 +33,6 @@ class Queue {
 		this.back = (this.size + 1) % this.capacity;
 		this.price = price;
 		this.array[this.back] = "[" +item + ", Price = " + price + ", ID ="+ id + "]" + "\n";
-		this.array[this.back1] =  item;
 		this.size = this.size + 1;
 		//System.out.println(item);
 		return item + "has been entered";
@@ -62,10 +61,7 @@ class Queue {
 		return this.array[this.back];
 	}
 	
-	int peekBackid(){
 
-		return this.counter[this.back1];
-	}
 
 	int size() {
 		return this.size;

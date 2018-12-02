@@ -56,7 +56,7 @@ public class test {
 		lblNewLabel_1.setText("0");
 
 		Label lblReimbursmentOffered = new Label(EasyRegister, SWT.NONE);
-		lblReimbursmentOffered.setBounds(665, 238, 166, 20);
+		lblReimbursmentOffered.setBounds(655, 320, 166, 20);
 		lblReimbursmentOffered.setText("Reimbursment offered :");
 
 		Label lblAddToInventory = new Label(EasyRegister, SWT.NONE);
@@ -242,13 +242,13 @@ public class test {
 
 		btnNewButton_4.setText("Add");
 		Label label_2 = new Label(EasyRegister, SWT.NONE);
-		label_2.setBounds(837, 338, 70, 20);
+		label_2.setBounds(872, 460, 70, 20);
 		label_2.setText("$:");
 		text_7 = new Text(EasyRegister, SWT.BORDER);
-		text_7.setBounds(837, 238, 78, 26);
+		text_7.setBounds(872, 317, 78, 26);
 
 		Button btnCalculateChange = new Button(EasyRegister, SWT.NONE);
-		btnCalculateChange.setBounds(940, 238, 160, 30);
+		btnCalculateChange.setBounds(1021, 315, 160, 30);
 		btnCalculateChange.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event e) {
 				switch (e.type) {
@@ -269,7 +269,7 @@ public class test {
 		btnCalculateChange.setText("Calculate Change");
 
 		Label lblChangeForCustomer = new Label(EasyRegister, SWT.NONE);
-		lblChangeForCustomer.setBounds(665, 338, 146, 20);
+		lblChangeForCustomer.setBounds(826, 408, 146, 20);
 		lblChangeForCustomer.setText("Change for Customer");
 
 		Label lblcannotRemoveLast = new Label(EasyRegister, SWT.NONE);
@@ -279,10 +279,6 @@ public class test {
 		Label lblSortInventoryBy = new Label(EasyRegister, SWT.NONE);
 		lblSortInventoryBy.setBounds(106, 408, 129, 20);
 		lblSortInventoryBy.setText("Sort Inventory");
-
-		Label lblRemovePurchasedItems = new Label(EasyRegister, SWT.NONE);
-		lblRemovePurchasedItems.setBounds(665, 498, 430, 20);
-		lblRemovePurchasedItems.setText("Complete checkout/Remove Purchased items from inventory");
 
 		Label lblFindItem = new Label(EasyRegister, SWT.NONE);
 		lblFindItem.setBounds(10, 183, 70, 20);
@@ -324,31 +320,6 @@ public class test {
 
 		Label label = new Label(EasyRegister, SWT.SEPARATOR | SWT.VERTICAL);
 		label.setBounds(607, 10, 21, 519);
-
-		Button btnNewButton = new Button(EasyRegister, SWT.NONE);
-		btnNewButton.setBounds(1101, 493, 90, 30);
-		btnNewButton.addListener(SWT.Selection, new Listener() {
-			public void handleEvent(Event e) {
-				switch (e.type) {
-				case SWT.Selection:
-					label_2.setText("$: ");
-					lblNewLabel_1.setText("0");
-
-				System.out.println(checkout.peekBackid());
-					int x = 0;
-					while (x < 10) {
-					int value =	checkout.peekBackid();
-						stack.remove(value);
-						checkout.dequeue();
-						x++;
-					}
-					break;
-
-				}
-			}
-		});
-
-		btnNewButton.setText("Remove");
 
 		EasyRegister.open();
 		EasyRegister.layout();

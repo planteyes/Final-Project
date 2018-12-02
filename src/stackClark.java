@@ -95,7 +95,7 @@ public class stackClark<Item> implements Iterable<Item> {
 
 	}
 	
-	public double Find(double key) {
+	public double findD(double key) {
 	
 		Node current = top;
 
